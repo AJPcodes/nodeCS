@@ -62,7 +62,12 @@ class List {
     this.tail = null
   }
 
-  add (node) {
+  addHead (node) {
+    node.next = this.head
+    this.head = node
+  }
+
+  addTail (node) {
     //first item
     if (!this.head) {
       this.head = node
@@ -70,15 +75,25 @@ class List {
     }
     //nth (non zero) item
     else {
-
       this.tail.next = node
       this.tail = node
-
     }
-
 
   }
 
+  removeTail() {
+    let current = this.head
+
+    while (current.next !== this.tail) {
+      current = current.next
+    }
+    current.next = null
+    this.tail = current
+  }
+
+  removeHead() {
+    this.head = this.head.next
+  }
 }
 
 const myList = new List()
