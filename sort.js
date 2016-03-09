@@ -12,6 +12,8 @@ let loop2 = 0
 
 
 const swap = (array, index1, index2) => {
+  console.log(chalk.red(util.inspect(array)))
+
   const temp = array[index1]
   array[index1] = array[index2]
   array[index2] = temp
@@ -19,7 +21,7 @@ const swap = (array, index1, index2) => {
 }
 
 //basic bubble sort
-function bubbleSort1 (array) {
+const bubbleSort1 = (array) => {
 
   let sorted = false
 
@@ -41,7 +43,7 @@ function bubbleSort1 (array) {
   return array;
 }
 
-function bubbleSort2 (array) {
+const bubbleSort2 = (array) => {
 
   for (let j = 1; j < array.length; j++) {
     // loop2++
@@ -55,5 +57,41 @@ function bubbleSort2 (array) {
   return array
 }
 
-console.log(bubbleSort1(shuffled))
-console.log(bubbleSort2(shuffled))
+// for i ← 1 to length(A) - 1
+//     j ← i
+//     while j > 0 and A[j-1] > A[j]
+//         swap A[j] and A[j-1]
+//         j ← j - 1
+//     end while
+// end for
+
+
+const insertionSort = (array) => {
+
+  let largest = array[0]
+  console.log('largest', largest)
+
+  for (let i=1; i<array.length; i++) {
+
+    if (array[i] > largest) {
+      largest = array[i]
+      console.log('largest', largest)
+    }
+    else {
+      let j = i;
+      while (array[j] < array[j-1]) {
+        swap(array, j, j-1);
+        j--
+      }
+    }
+  }
+
+  return array
+}
+
+const selectionSort = (array) => {
+
+  return array
+}
+
+console.log(insertionSort(shuffled))
