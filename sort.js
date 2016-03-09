@@ -91,7 +91,26 @@ const insertionSort = (array) => {
 
 const selectionSort = (array) => {
 
+  for (let i=0; i<array.length; i++) {
+
+  let smallest = i;
+
+    for (let j = i; j < array.length; j++) {
+
+      if (array[j] < array[smallest]) {
+        smallest = j
+      }
+
+    }
+
+  if (smallest !== i) {
+    swap(array, i, smallest)
+  }
+
+
+  }
   return array
 }
 
-console.log(insertionSort(shuffled))
+
+console.log(selectionSort(shuffled))
