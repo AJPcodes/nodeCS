@@ -1,0 +1,22 @@
+{
+  "name": "nodecs",
+  "version": "1.0.0",
+  "description": "Trying out some basic CS topics in node",
+  "main": "dictionary.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AJPcodes/nodeCS.git"
+  },
+  "author": "Allen Phelps github.com/ajpcodes (http://github.com/AJPcodes)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AJPcodes/nodeCS/issues"
+  },
+  "homepage": "https://github.com/AJPcodes/nodeCS#readme",
+  "dependencies": {
+    "lodash": "^4.6.1"
+  }
+}
